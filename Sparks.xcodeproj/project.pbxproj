@@ -17,6 +17,7 @@
 		62127B892B4941E8008D2656 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B882B4941E8008D2656 /* ListRowView.swift */; };
 		62127B8B2B49442C008D2656 /* AddAndEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B8A2B49442C008D2656 /* AddAndEditViewModel.swift */; };
 		62127B8D2B494827008D2656 /* AddAndEditSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B8C2B494827008D2656 /* AddAndEditSheetView.swift */; };
+		62127B942B4A9ACD008D2656 /* NoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B932B4A9ACD008D2656 /* NoListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		62127B882B4941E8008D2656 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		62127B8A2B49442C008D2656 /* AddAndEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAndEditViewModel.swift; sourceTree = "<group>"; };
 		62127B8C2B494827008D2656 /* AddAndEditSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAndEditSheetView.swift; sourceTree = "<group>"; };
+		62127B932B4A9ACD008D2656 /* NoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +66,11 @@
 			isa = PBXGroup;
 			children = (
 				62127B712B493800008D2656 /* SparksApp.swift */,
-				62127B7F2B493832008D2656 /* ListView.swift */,
-				62127B882B4941E8008D2656 /* ListRowView.swift */,
 				62127B812B493947008D2656 /* SparksDataModel.xcdatamodeld */,
-				62127B842B493A64008D2656 /* Spark.swift */,
 				62127B862B493C2D008D2656 /* CoreDataManager.swift */,
-				62127B8A2B49442C008D2656 /* AddAndEditViewModel.swift */,
-				62127B8C2B494827008D2656 /* AddAndEditSheetView.swift */,
+				62127B922B4A9A50008D2656 /* View */,
+				62127B912B4A9A3B008D2656 /* ViewModel */,
+				62127B902B4A9A15008D2656 /* Model */,
 				62127B752B493800008D2656 /* Assets.xcassets */,
 				62127B772B493800008D2656 /* Preview Content */,
 			);
@@ -83,6 +83,33 @@
 				62127B782B493800008D2656 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		62127B902B4A9A15008D2656 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				62127B842B493A64008D2656 /* Spark.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		62127B912B4A9A3B008D2656 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				62127B8A2B49442C008D2656 /* AddAndEditViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		62127B922B4A9A50008D2656 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				62127B7F2B493832008D2656 /* ListView.swift */,
+				62127B882B4941E8008D2656 /* ListRowView.swift */,
+				62127B932B4A9ACD008D2656 /* NoListView.swift */,
+				62127B8C2B494827008D2656 /* AddAndEditSheetView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62127B942B4A9ACD008D2656 /* NoListView.swift in Sources */,
 				62127B872B493C2D008D2656 /* CoreDataManager.swift in Sources */,
 				62127B892B4941E8008D2656 /* ListRowView.swift in Sources */,
 				62127B8B2B49442C008D2656 /* AddAndEditViewModel.swift in Sources */,

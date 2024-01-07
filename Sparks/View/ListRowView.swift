@@ -29,9 +29,10 @@ struct ListRowView: View {
                     Image(uiImage: uiImage!)
                         .resizable()
                         .frame(width: 60, height: 60)
-                        .cornerRadius(10)
+                        .cornerRadius(6)
                 }
             }
+            .frame(minHeight: 66) //有图片和没图片的项目高度保持一致；只有文字时，swipeAction按钮只显示symbol
             
             //日期及收藏
             HStack(spacing: 4) {

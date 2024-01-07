@@ -118,7 +118,8 @@ struct AddImageStyle: ViewModifier {
         content
             .font(.system(size: 28, weight: .medium))
             .foregroundColor(Color(uiColor: .systemGray3))
-            .frame(width: 100, height: 100)
+            .frame(height: 300)
+            .frame(maxWidth: .infinity)
             .background(Color.white)
             .cornerRadius(16)
     }
@@ -138,7 +139,7 @@ struct TextEditorStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .scrollContentBackground(.hidden)
-            .frame(minHeight: 300)
+            .frame(minHeight: 200)
             .padding()
             .background (
                 Color.white.cornerRadius(16)
