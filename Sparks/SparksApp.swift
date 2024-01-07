@@ -11,7 +11,8 @@ import SwiftUI
 struct SparksApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ListView()
+                .environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
         }
     }
 }

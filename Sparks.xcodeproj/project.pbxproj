@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		62127B722B493800008D2656 /* SparksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B712B493800008D2656 /* SparksApp.swift */; };
-		62127B742B493800008D2656 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B732B493800008D2656 /* ContentView.swift */; };
 		62127B762B493800008D2656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62127B752B493800008D2656 /* Assets.xcassets */; };
 		62127B792B493800008D2656 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62127B782B493800008D2656 /* Preview Assets.xcassets */; };
+		62127B802B493832008D2656 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B7F2B493832008D2656 /* ListView.swift */; };
+		62127B832B493947008D2656 /* SparksDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 62127B812B493947008D2656 /* SparksDataModel.xcdatamodeld */; };
+		62127B852B493A64008D2656 /* Spark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B842B493A64008D2656 /* Spark.swift */; };
+		62127B872B493C2D008D2656 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B862B493C2D008D2656 /* CoreDataManager.swift */; };
+		62127B892B4941E8008D2656 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B882B4941E8008D2656 /* ListRowView.swift */; };
+		62127B8B2B49442C008D2656 /* AddAndEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B8A2B49442C008D2656 /* AddAndEditViewModel.swift */; };
+		62127B8D2B494827008D2656 /* AddAndEditSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B8C2B494827008D2656 /* AddAndEditSheetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		62127B6E2B493800008D2656 /* Sparks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sparks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62127B712B493800008D2656 /* SparksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparksApp.swift; sourceTree = "<group>"; };
-		62127B732B493800008D2656 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		62127B752B493800008D2656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62127B782B493800008D2656 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		62127B7F2B493832008D2656 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		62127B822B493947008D2656 /* ListsDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ListsDataModel.xcdatamodel; sourceTree = "<group>"; };
+		62127B842B493A64008D2656 /* Spark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spark.swift; sourceTree = "<group>"; };
+		62127B862B493C2D008D2656 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		62127B882B4941E8008D2656 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
+		62127B8A2B49442C008D2656 /* AddAndEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAndEditViewModel.swift; sourceTree = "<group>"; };
+		62127B8C2B494827008D2656 /* AddAndEditSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAndEditSheetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +64,13 @@
 			isa = PBXGroup;
 			children = (
 				62127B712B493800008D2656 /* SparksApp.swift */,
-				62127B732B493800008D2656 /* ContentView.swift */,
+				62127B7F2B493832008D2656 /* ListView.swift */,
+				62127B882B4941E8008D2656 /* ListRowView.swift */,
+				62127B812B493947008D2656 /* SparksDataModel.xcdatamodeld */,
+				62127B842B493A64008D2656 /* Spark.swift */,
+				62127B862B493C2D008D2656 /* CoreDataManager.swift */,
+				62127B8A2B49442C008D2656 /* AddAndEditViewModel.swift */,
+				62127B8C2B494827008D2656 /* AddAndEditSheetView.swift */,
 				62127B752B493800008D2656 /* Assets.xcassets */,
 				62127B772B493800008D2656 /* Preview Content */,
 			);
@@ -137,8 +155,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62127B742B493800008D2656 /* ContentView.swift in Sources */,
+				62127B872B493C2D008D2656 /* CoreDataManager.swift in Sources */,
+				62127B892B4941E8008D2656 /* ListRowView.swift in Sources */,
+				62127B8B2B49442C008D2656 /* AddAndEditViewModel.swift in Sources */,
+				62127B832B493947008D2656 /* SparksDataModel.xcdatamodeld in Sources */,
+				62127B8D2B494827008D2656 /* AddAndEditSheetView.swift in Sources */,
 				62127B722B493800008D2656 /* SparksApp.swift in Sources */,
+				62127B802B493832008D2656 /* ListView.swift in Sources */,
+				62127B852B493A64008D2656 /* Spark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +299,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,6 +329,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,6 +365,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		62127B812B493947008D2656 /* SparksDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				62127B822B493947008D2656 /* ListsDataModel.xcdatamodel */,
+			);
+			currentVersion = 62127B822B493947008D2656 /* ListsDataModel.xcdatamodel */;
+			path = SparksDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 62127B662B493800008D2656 /* Project object */;
 }
