@@ -7,6 +7,17 @@
 
 import SwiftUI
 
+//筛选
+struct SearchConfig: Equatable {
+    
+    enum Filter {
+        case all, star
+    }
+    
+    var query: String = ""
+    var filter: Filter = .all
+}
+
 struct ListView: View {
     
     var coreDataManager = CoreDataManager.shared
@@ -15,6 +26,11 @@ struct ListView: View {
     @FetchRequest(fetchRequest: Spark.all()) var sparks
     
     @State var selectedSpark: Spark?
+    
+    
+    //筛选
+    @State var searchConfig: SearchConfig = .init()
+    
     
     var body: some View {
         NavigationView {
@@ -51,15 +67,25 @@ struct ListView: View {
                 }
             }
             
+            .searchable(text: $searchConfig.query, prompt: Text("搜索"))
             .navigationTitle("列表")
             .toolbar {
                 ToolbarItem {
                     Button {
-                        selectedSpark = Spark.empty()
+                        selectedSpark = Spark.empty()  //将空的Spark赋值给selectedSpark，来进行添加；empty()在新的上下文中，所以，即使点击取消，也不会添加空的Spark
                     } label: {
                         Image(systemName: "plus")
                     }
 
+                }
+                
+                ToolbarItem(placement: .principal) {
+                    Picker("picker", selection: $searchConfig.filter) {
+                        Text("全部").tag(SearchConfig.Filter.all)
+                        Text("收藏").tag(SearchConfig.Filter.star)
+                    }
+                    .pickerStyle(.segmented)
+                    .frame(width: 160)
                 }
             }
             .sheet(item: $selectedSpark) {
@@ -68,12 +94,15 @@ struct ListView: View {
                 AddAndEditSheetView(vm: .init(coreDataManager: coreDataManager, spark: spark))
             }
 
+            .onChange(of: searchConfig) { newConfig in
+                sparks.nsPredicate = Spark.filter(with: newConfig)
+            }
         }
     }
 }
 
-struct ListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListView()
-    }
-}
+//struct ListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListView()
+//    }
+//}

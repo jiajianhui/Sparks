@@ -63,6 +63,20 @@ extension Spark {
         
         return request
     }
+    
+    //筛选
+    static func filter(with config: SearchConfig) -> NSPredicate {
+        
+        switch config.filter {
+        case .all:
+            //全部——如果搜索输入为空，返回全部，否则返回对应搜索
+            return config.query.isEmpty ? NSPredicate(value: true) : NSPredicate(format: "title CONTAINS[cd] %@", config.query)
+        case .star:
+            //收藏——如果搜索输入为空，返回所有收藏，否则返回对应搜索的收藏
+            return config.query.isEmpty ? NSPredicate(format: "collected == %@", NSNumber(value: true)) : NSPredicate(format: "title CONTAINS[cd] %@ AND collected == %@", config.query, NSNumber(value: true))
+        }
+        
+    }
 }
 
 
