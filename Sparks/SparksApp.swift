@@ -11,8 +11,21 @@ import SwiftUI
 struct SparksApp: App {
     var body: some Scene {
         WindowGroup {
-            ListView()
-                .environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
+            TabView {
+                ListView()
+                    .environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
+                    .tabItem {
+                        Image(systemName: "bubbles.and.sparkles")
+                        Text("灵感")
+                    }
+                
+                SettingView(isToggle: .constant(false))
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("设置")
+                    }
+            }
+            
         }
     }
 }

@@ -19,6 +19,10 @@
 		62127B8D2B494827008D2656 /* AddAndEditSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B8C2B494827008D2656 /* AddAndEditSheetView.swift */; };
 		62127B942B4A9ACD008D2656 /* NoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62127B932B4A9ACD008D2656 /* NoListView.swift */; };
 		621A24AA2B4BA1C3002E1DC2 /* Haptic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A24A92B4BA1C3002E1DC2 /* Haptic.swift */; };
+		621A24AC2B4BDCAF002E1DC2 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A24AB2B4BDCAF002E1DC2 /* SettingView.swift */; };
+		621A24AE2B4BDD16002E1DC2 /* SettingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A24AD2B4BDD16002E1DC2 /* SettingRowView.swift */; };
+		621A24B32B4BE181002E1DC2 /* SettingSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A24B22B4BE181002E1DC2 /* SettingSheetView.swift */; };
+		621A24B52B4BE254002E1DC2 /* SettingViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621A24B42B4BE254002E1DC2 /* SettingViewData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,10 @@
 		62127B8C2B494827008D2656 /* AddAndEditSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAndEditSheetView.swift; sourceTree = "<group>"; };
 		62127B932B4A9ACD008D2656 /* NoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoListView.swift; sourceTree = "<group>"; };
 		621A24A92B4BA1C3002E1DC2 /* Haptic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic.swift; sourceTree = "<group>"; };
+		621A24AB2B4BDCAF002E1DC2 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		621A24AD2B4BDD16002E1DC2 /* SettingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRowView.swift; sourceTree = "<group>"; };
+		621A24B22B4BE181002E1DC2 /* SettingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSheetView.swift; sourceTree = "<group>"; };
+		621A24B42B4BE254002E1DC2 /* SettingViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,12 +115,32 @@
 		62127B922B4A9A50008D2656 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				621A24B62B4BF231002E1DC2 /* ListView */,
+				621A24AF2B4BE10D002E1DC2 /* SettingView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		621A24AF2B4BE10D002E1DC2 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				621A24AB2B4BDCAF002E1DC2 /* SettingView.swift */,
+				621A24AD2B4BDD16002E1DC2 /* SettingRowView.swift */,
+				621A24B22B4BE181002E1DC2 /* SettingSheetView.swift */,
+				621A24B42B4BE254002E1DC2 /* SettingViewData.swift */,
+			);
+			path = SettingView;
+			sourceTree = "<group>";
+		};
+		621A24B62B4BF231002E1DC2 /* ListView */ = {
+			isa = PBXGroup;
+			children = (
 				62127B7F2B493832008D2656 /* ListView.swift */,
 				62127B882B4941E8008D2656 /* ListRowView.swift */,
 				62127B932B4A9ACD008D2656 /* NoListView.swift */,
 				62127B8C2B494827008D2656 /* AddAndEditSheetView.swift */,
 			);
-			path = View;
+			path = ListView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,9 +220,13 @@
 				62127B832B493947008D2656 /* SparksDataModel.xcdatamodeld in Sources */,
 				62127B8D2B494827008D2656 /* AddAndEditSheetView.swift in Sources */,
 				621A24AA2B4BA1C3002E1DC2 /* Haptic.swift in Sources */,
+				621A24B52B4BE254002E1DC2 /* SettingViewData.swift in Sources */,
+				621A24B32B4BE181002E1DC2 /* SettingSheetView.swift in Sources */,
 				62127B722B493800008D2656 /* SparksApp.swift in Sources */,
+				621A24AE2B4BDD16002E1DC2 /* SettingRowView.swift in Sources */,
 				62127B802B493832008D2656 /* ListView.swift in Sources */,
 				62127B852B493A64008D2656 /* Spark.swift in Sources */,
+				621A24AC2B4BDCAF002E1DC2 /* SettingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
