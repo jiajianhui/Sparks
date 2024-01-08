@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-//筛选
+//搜索、筛选
 struct SearchConfig: Equatable {
     
     enum Filter {
@@ -77,7 +77,6 @@ struct ListView: View {
                     } label: {
                         Image(systemName: "plus")
                     }
-
                 }
                 
                 ToolbarItem(placement: .principal) {
