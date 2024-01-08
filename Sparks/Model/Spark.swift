@@ -30,6 +30,13 @@ class Spark: NSManagedObject, Identifiable {
         Spark(context: context)
     }
     
+    //验证输入是否有效
+    var isVaild: Bool {
+        //trimmingCharacters会去除字符串开头和结尾的空格和换行符
+        !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+    
+    
     
     //时间格式化
     let dateFormatter: DateFormatter = {

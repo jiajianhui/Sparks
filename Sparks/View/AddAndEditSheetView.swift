@@ -14,20 +14,22 @@ struct AddAndEditSheetView: View {
     
     @ObservedObject var vm: AddAndEditViewModel
     
+    //检查输入是否合法，借助alert提示
+    @State var hasError = false
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 16) {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("主题名称")
+                        Text("灵感名称")
                             .modifier(SmallTitleStyle())
-                        TextField("请输入主题", text: $vm.spark.title)
+                        TextField("请输入灵感名称", text: $vm.spark.title)
                             .modifier(TextFieldStyle())
                     }
                     
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("主题详情")
+                        Text("灵感详情")
                             .modifier(SmallTitleStyle())
                         TextEditor(text: $vm.spark.content)
                             .modifier(TextEditorStyle())
@@ -81,14 +83,17 @@ struct AddAndEditSheetView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        vm.save()
-                        dismiss()
+                        validSave()
                     } label: {
-                        Text(vm.isNew ? "添加" : "完成")
+                        Text(vm.isNew ? "添加" : "确定")
                             .fontWeight(.medium)
                     }
 
                 }
+            }
+            
+            .alert(isPresented: $hasError) {
+                Alert(title: Text("灵感名称不能为空🙏"), dismissButton: .default(Text("好的")))
             }
             
         }
@@ -100,6 +105,19 @@ struct AddAndEditSheetView: View {
 //        AddAndEditSheetView(vm: .init(coreDataManager: .shared))
 //    }
 //}
+
+
+//验证保存
+extension AddAndEditSheetView {
+    func validSave() {
+        if vm.spark.isVaild {
+            vm.save()
+            dismiss()
+        } else {
+            hasError = true
+        }
+    }
+}
 
 
 //MARK: - 样式组件

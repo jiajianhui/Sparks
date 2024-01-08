@@ -25,10 +25,10 @@ struct ListView: View {
     //从数据库拿到数据
     @FetchRequest(fetchRequest: Spark.all()) var sparks
     
+    //是否点击项目
     @State var selectedSpark: Spark?
     
-    
-    //筛选
+    //筛选配置项
     @State var searchConfig: SearchConfig = .init()
     
     
@@ -72,6 +72,7 @@ struct ListView: View {
             .toolbar {
                 ToolbarItem {
                     Button {
+                        UIImpactFeedbackGenerator.imapct(style: .light)
                         selectedSpark = Spark.empty()  //将空的Spark赋值给selectedSpark，来进行添加；empty()在新的上下文中，所以，即使点击取消，也不会添加空的Spark
                     } label: {
                         Image(systemName: "plus")
