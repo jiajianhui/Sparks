@@ -13,7 +13,7 @@ class Spark: NSManagedObject, Identifiable {
     
     @NSManaged var title: String
     @NSManaged var content: String
-    @NSManaged var timeStamp: String
+    @NSManaged var timeStamp: Date
     @NSManaged var collected: Bool
     @NSManaged var image: Data?
     
@@ -21,7 +21,7 @@ class Spark: NSManagedObject, Identifiable {
     override func awakeFromInsert() {
         super.awakeFromInsert()
         
-        setPrimitiveValue(displayDate(Date.now), forKey: "timeStamp")
+        setPrimitiveValue(Date(), forKey: "timeStamp")
         setPrimitiveValue(false, forKey: "collected")
     }
     
@@ -36,22 +36,6 @@ class Spark: NSManagedObject, Identifiable {
         !title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
     
-    
-    
-    //时间格式化
-    let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        
-        formatter.locale = Locale(identifier: "zh_Hans")
-        formatter.setLocalizedDateFormatFromTemplate("HH:mm MM-dd")
-        
-        return formatter
-    }()
-    
-    //将Date转换为String
-    func displayDate(_ date: Date) -> String {
-        dateFormatter.string(from: date)
-    }
 }
 
 extension Spark {

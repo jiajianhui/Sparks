@@ -37,7 +37,7 @@ struct ListRowView: View {
             //日期及收藏
             HStack(spacing: 4) {
                 Image(systemName: "calendar")
-                Text(spark.timeStamp)
+                Text(displayDate(spark.timeStamp))
                 
                 Spacer()
                 Image(systemName: "star.fill")
@@ -53,6 +53,21 @@ struct ListRowView: View {
         .background {
             Color.white.opacity(0.0001)  //方便点击
         }
+    }
+    
+    //时间格式化
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        
+        formatter.locale = Locale(identifier: "zh_Hans")
+        formatter.setLocalizedDateFormatFromTemplate("HH:mm MM-dd")
+        
+        return formatter
+    }()
+    
+    //将Date转换为String
+    func displayDate(_ date: Date) -> String {
+        dateFormatter.string(from: date)
     }
 }
 

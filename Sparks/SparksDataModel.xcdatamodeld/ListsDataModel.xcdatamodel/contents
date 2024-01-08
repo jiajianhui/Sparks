@@ -4,7 +4,7 @@
         <attribute name="collected" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
-        <attribute name="timeStamp" optional="YES" attributeType="String"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
 </model>
