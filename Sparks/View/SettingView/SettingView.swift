@@ -32,27 +32,17 @@ struct SettingView: View {
                         SettingRowView(imageString: "pencil.and.ruler.fill", linkTitle: "设计初衷")
                     }
                     .sheet(isPresented: $showDesignSheet) {
-                        SettingSheetView(
-                            title: vm.designSheetContent.title,
-                            symbol: vm.designSheetContent.symbol,
-                            content1: vm.designSheetContent.content1,
-                            content2: vm.designSheetContent.content2
-                        )
+                        SettingSheetView(content: vm.designSheetContent)
                     }
-                    
+
                     Button {
                         showAboutMeSheet.toggle()
                     } label: {
                         SettingRowView(imageString: "person.fill", linkTitle: "关于开发者")
                     }
                     .sheet(isPresented: $showAboutMeSheet) {
-                        SettingSheetView(
-                            title: vm.aboutMeSheetContent.title,
-                            symbol: vm.aboutMeSheetContent.symbol,
-                            content1: vm.aboutMeSheetContent.content1,
-                            content2: vm.aboutMeSheetContent.content2,
-                            content3: vm.aboutMeSheetContent.content3
-                        )
+                        SettingSheetView(content: vm.aboutMeSheetContent)
+                            .presentationDragIndicator(.visible)
                     }
                 } header: {
                     Text("关于")
@@ -97,12 +87,7 @@ struct SettingView: View {
                         SettingRowView(imageString: "hand.raised.slash.fill", linkTitle: "隐私政策")
                     }
                     .sheet(isPresented: $showPrivacy) {
-                        SettingSheetView(
-                            title: vm.privacySheetContent.title,
-                            symbol: vm.privacySheetContent.symbol,
-                            content1: vm.privacySheetContent.content1,
-                            content2: vm.privacySheetContent.content2
-                        )
+                        SettingSheetView(content: vm.privacySheetContent)
                     }
 
                     Button {
