@@ -62,13 +62,15 @@ struct ListView: View {
                                 }
                         }
                     }
+                } else if searchConfig.filter == .star && sparks.filter ({ $0.collected }).isEmpty {
+                    NoListView(emptyType: .star)
                 } else {
-                    NoListView()
+                    NoListView(emptyType: .all)
                 }
             }
             
             .searchable(text: $searchConfig.query, prompt: Text("搜索"))
-            .navigationTitle("列表")
+            .navigationTitle("灵感")
             .toolbar {
                 ToolbarItem {
                     Button {
