@@ -45,9 +45,11 @@ class CoreDataManager {
 
 //数据的管理
 extension CoreDataManager {
-    func delete(_ spark: Spark) {
-        viewContext.delete(spark)
-        try? self.viewContext.save()
+    func delete(_ spark: Spark, in context: NSManagedObjectContext) {  //在新的上下文中进行删除
+        if let existingContact = exisits(spark, in: context) {
+            context.delete(existingContact)
+            try? context.save()
+        }
     }
     
     func collecred(_ spark: Spark) {

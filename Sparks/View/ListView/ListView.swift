@@ -42,7 +42,7 @@ struct ListView: View {
                             ListRowView(spark: spark)
                                 .swipeActions {
                                     Button(role: .destructive) {
-                                        coreDataManager.delete(spark)
+                                        coreDataManager.delete(spark, in: coreDataManager.newContext)
                                     } label: {
                                         Image(systemName: "trash.fill")
                                         Text("删除")
