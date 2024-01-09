@@ -74,7 +74,7 @@ struct ListView: View {
             .toolbar {
                 ToolbarItem {
                     Button {
-                        UIImpactFeedbackGenerator.imapct(style: .light)
+                        UIImpactFeedbackGenerator.impact(style: .rigid)
                         selectedSpark = Spark.empty()  //将空的Spark赋值给selectedSpark，来进行添加；empty()在新的上下文中，所以，即使点击取消，也不会添加空的Spark
                     } label: {
                         Image(systemName: "plus")

@@ -17,11 +17,13 @@ struct NoListView: View {
     
     var body: some View {
         
-        switch emptyType {
-            case .all:
-            emptyView
-            case .star:
-            emptyStarView
+        ScrollView {
+            switch emptyType {
+                case .all:
+                emptyView
+                case .star:
+                emptyStarView
+            }
         }
     }
 }
@@ -41,7 +43,8 @@ extension NoListView {
                 .font(.title.bold())
             Text("点击上面的“+”按钮来添加")
         }
-        .offset(x: 0, y: -40)
+        .frame(maxWidth: .infinity)
+        .offset(x: 0, y: 200)
     }
     
     //收藏页空视图
@@ -51,7 +54,8 @@ extension NoListView {
                 .font(.title.bold())
 //                    Text("滑动条目快速收藏")
         }
-        .offset(x: 0, y: -40)
+        .frame(maxWidth: .infinity)
+        .offset(x: 0, y: 220)
     }
     
     

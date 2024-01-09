@@ -14,6 +14,8 @@ struct SparksApp: App {
     @AppStorage("isToggle") var isToggle = false //将变量存储起来
     @State var locked = true
     
+    @State private var selectedIndex: Int = 0
+    
     var body: some Scene {
         WindowGroup {
             
@@ -21,19 +23,24 @@ struct SparksApp: App {
                 if locked && isToggle {
                     LockedView(authorize: authorize)
                 } else {
-                    TabView {
+                    TabView(selection: $selectedIndex) {
                         ListView()
                             .environment(\.managedObjectContext, CoreDataManager.shared.viewContext)
                             .tabItem {
                                 Image(systemName: "bubbles.and.sparkles")
                                 Text("灵感")
                             }
+                            .tag(0)
                         
                         SettingView(isToggle: $isToggle)
                             .tabItem {
                                 Image(systemName: "gear")
                                 Text("设置")
                             }
+                            .tag(1)
+                    }
+                    .onChange(of: selectedIndex) { _ in
+                        UIImpactFeedbackGenerator.impact(style: .medium)
                     }
                 }
             }

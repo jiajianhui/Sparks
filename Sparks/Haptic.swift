@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension UIImpactFeedbackGenerator {
-    static func imapct(style: UIImpactFeedbackGenerator.FeedbackStyle) {
+    static func impact(style: UIImpactFeedbackGenerator.FeedbackStyle) {
         let generator = UIImpactFeedbackGenerator(style: style)
         generator.impactOccurred()
     }
