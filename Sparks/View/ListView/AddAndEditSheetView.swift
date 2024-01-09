@@ -17,6 +17,12 @@ struct AddAndEditSheetView: View {
     //检查输入是否合法，借助alert提示
     @State var hasError = false
     
+    //键盘相关
+    enum TextFieldName {
+        case textField1
+    }
+    @FocusState var focused: TextFieldName?
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -26,6 +32,8 @@ struct AddAndEditSheetView: View {
                             .modifier(SmallTitleStyle())
                         TextField("请输入灵感名称", text: $vm.spark.title)
                             .modifier(TextFieldStyle())
+                            .focused($focused, equals: .textField1)
+                            .submitLabel(.done)  //自定义键盘提交按钮的文案
                     }
                     
                     VStack(alignment: .leading, spacing: 8) {
@@ -45,6 +53,7 @@ struct AddAndEditSheetView: View {
                                     if let data = UIImage(data: vm.spark.image!) {
                                         Image(uiImage: data)
                                             .resizable()
+                                            .scaledToFill()
                                             .modifier(AddImageStyle())
                                             .overlay(alignment: .topTrailing) {
                                                 Button {
@@ -68,6 +77,11 @@ struct AddAndEditSheetView: View {
                     }
                 }
                 .padding(.horizontal)
+                
+                //自动唤起键盘
+                .onAppear {
+                    focused = .textField1
+                }
             }
             .background {
                 Color(uiColor: .systemGray6).ignoresSafeArea()
@@ -139,7 +153,7 @@ struct AddImageStyle: ViewModifier {
             .frame(height: 300)
             .frame(maxWidth: .infinity)
             .background(Color.white)
-            .cornerRadius(16)
+            .cornerRadius(10)
     }
 }
 
@@ -148,7 +162,7 @@ struct TextFieldStyle: ViewModifier {
         content
             .padding()
             .background {
-                Color.white.cornerRadius(16)
+                Color.white.cornerRadius(10)
             }
     }
 }
@@ -160,7 +174,7 @@ struct TextEditorStyle: ViewModifier {
             .frame(minHeight: 200)
             .padding()
             .background (
-                Color.white.cornerRadius(16)
+                Color.white.cornerRadius(10)
             )
     }
 }
