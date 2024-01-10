@@ -26,7 +26,7 @@ struct SettingRowView: View {
                 .fontWeight(.medium)
             Spacer()
             Image(systemName: "chevron.right")
-                .opacity(0.3)
+                .opacity(0)
         }
         .padding(.vertical, 8)
         .foregroundColor(color)

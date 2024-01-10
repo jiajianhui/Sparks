@@ -152,7 +152,7 @@ struct AddImageStyle: ViewModifier {
             .foregroundColor(Color(uiColor: .systemGray3))
             .frame(height: 300)
             .frame(maxWidth: .infinity)
-            .background(Color.white)
+            .background(Color("inputColor"))
             .cornerRadius(10)
     }
 }
@@ -161,9 +161,8 @@ struct TextFieldStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding()
-            .background {
-                Color.white.cornerRadius(10)
-            }
+            .background(Color("inputColor"))
+            .cornerRadius(10)
     }
 }
 
@@ -173,8 +172,7 @@ struct TextEditorStyle: ViewModifier {
             .scrollContentBackground(.hidden)
             .frame(minHeight: 200)
             .padding()
-            .background (
-                Color.white.cornerRadius(10)
-            )
+            .background(Color("inputColor"))
+            .cornerRadius(10)
     }
 }

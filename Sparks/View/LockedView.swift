@@ -23,7 +23,6 @@ struct LockedView: View {
                 Text("点击解锁")
             }
             .foregroundColor(.primary.opacity(0.4))
-            .offset(y: -30)
         }
     }
 }
