@@ -45,6 +45,7 @@
 		621A24B22B4BE181002E1DC2 /* SettingSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingSheetView.swift; sourceTree = "<group>"; };
 		621A24B42B4BE254002E1DC2 /* SettingViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewData.swift; sourceTree = "<group>"; };
 		621A24B72B4C1F5F002E1DC2 /* LockedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockedView.swift; sourceTree = "<group>"; };
+		62807E8A2B502FAE003142B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 		62127B702B493800008D2656 /* Sparks */ = {
 			isa = PBXGroup;
 			children = (
+				62807E8A2B502FAE003142B8 /* Info.plist */,
 				62127B712B493800008D2656 /* SparksApp.swift */,
 				62127B812B493947008D2656 /* SparksDataModel.xcdatamodeld */,
 				62127B862B493C2D008D2656 /* CoreDataManager.swift */,
@@ -362,6 +364,9 @@
 				DEVELOPMENT_TEAM = ML2CJSB2YZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sparks/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "解锁应用";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -393,6 +398,9 @@
 				DEVELOPMENT_TEAM = ML2CJSB2YZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Sparks/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "解锁应用";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

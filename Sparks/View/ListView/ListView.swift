@@ -33,7 +33,7 @@ struct ListView: View {
     
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             
             ZStack {
                 if !sparks.isEmpty {

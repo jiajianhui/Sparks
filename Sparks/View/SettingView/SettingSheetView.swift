@@ -18,13 +18,14 @@ struct SettingSheetView: View {
                 VStack(alignment: .leading, spacing: 16) {
                     Text(content.symbol)
                         .font(.system(size: 46))
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     Text(content.content1)
                     Text(content.content2)
                     if content.content3 != nil {
                         Text(content.content3!)
                     }
                 }
-                .lineSpacing(7)
+                .lineSpacing(3)
                 .padding(.horizontal, 16)
                 .padding(.top, 4)
                     
@@ -43,6 +44,6 @@ struct SettingSheetView: View {
 
 struct SettingSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingSheetView(content: SheetContentModel(title: "hello", symbol: "标题", content1: "第一行", content2: "第二行", content3: "第三行"))
+        SettingSheetView(content: SettingViewData().aboutMeSheetContent)
     }
 }
