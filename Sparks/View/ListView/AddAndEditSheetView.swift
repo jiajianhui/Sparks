@@ -29,55 +29,49 @@ struct AddAndEditSheetView: View {
                 VStack(spacing: 16) {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("灵感名称")
-                            .modifier(SmallTitleStyle())
+                            .smallTitleStyle()
                         TextField("请输入灵感名称", text: $vm.spark.title)
-                            .modifier(TextFieldStyle())
+                            .textFieldStyle()
                             .focused($focused, equals: .textField1)
                             .submitLabel(.done)  //自定义键盘提交按钮的文案
                     }
                     
                     VStack(alignment: .leading, spacing: 8) {
                         Text("灵感详情")
-                            .modifier(SmallTitleStyle())
+                            .smallTitleStyle()
                         TextEditor(text: $vm.spark.content)
-                            .modifier(TextEditorStyle())
+                            .textEditorStyle()
                     }
                     
                     VStack(alignment: .leading, spacing: 8) {
                         Text("添加图片")
-                            .modifier(SmallTitleStyle())
+                            .smallTitleStyle()
 
-                        HStack {
-                            PhotosPicker(selection: $vm.imageSelection, matching: .images) {
-                                if vm.spark.image != nil {
-                                    if let data = UIImage(data: vm.spark.image!) {
-                                        Image(uiImage: data)
-                                            .resizable()
-                                            .scaledToFill()
-                                            .modifier(AddImageStyle())
-                                            .overlay(alignment: .topTrailing) {
-                                                Button {
-                                                    vm.spark.image = nil
-                                                    vm.imageSelection = nil
-                                                } label: {
-                                                    Image(systemName: "xmark.circle.fill")
-                                                        .offset(x: 6, y: -6)
-                                                        .symbolRenderingMode(.palette)
-                                                        .foregroundStyle(.white, .red)
-                                                }
+                        PhotosPicker(selection: $vm.imageSelection, matching: .images) {
+                            if vm.spark.image != nil {
+                                if let data = UIImage(data: vm.spark.image!) {
+                                    Image(uiImage: data)
+                                        .imageDisplayStyle()
+                                        .overlay(alignment: .topTrailing) {
+                                            Button {
+                                                vm.spark.image = nil
+                                                vm.imageSelection = nil
+                                            } label: {
+                                                Image(systemName: "xmark.circle.fill")
+                                                    .offset(x: 6, y: -6)
+                                                    .symbolRenderingMode(.palette)
+                                                    .foregroundStyle(.white, .red)
                                             }
-                                    }
-                                } else {
-                                    Image(systemName: "plus")
-                                        .modifier(AddImageStyle())
+                                        }
                                 }
+                            } else {
+                                Image(systemName: "plus")
+                                    .noImageDisplayStyle()
                             }
                         }
-                        .frame(maxWidth: .infinity, alignment: .leading)
                     }
                 }
-                .padding(.horizontal)
-                
+                .padding(.horizontal, 16)
                 //自动唤起键盘
                 .onAppear {
                     focused = .textField1
@@ -145,7 +139,7 @@ struct SmallTitleStyle: ViewModifier {
     }
 }
 
-struct AddImageStyle: ViewModifier {
+struct NoImageDisplayStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.system(size: 28, weight: .medium))
@@ -174,5 +168,37 @@ struct TextEditorStyle: ViewModifier {
             .padding()
             .background(Color("inputColor"))
             .cornerRadius(10)
+    }
+}
+
+//扩展View来创建新函数，方便实用modifier，更符合使用习惯
+extension View {
+    func smallTitleStyle() -> some View {
+        self.modifier(SmallTitleStyle())
+    }
+    
+    func noImageDisplayStyle() -> some View {
+        self.modifier(NoImageDisplayStyle())
+    }
+    
+    func textFieldStyle() -> some View {
+        self.modifier(TextFieldStyle())
+    }
+    
+    func textEditorStyle() -> some View {
+        self.modifier(TextEditorStyle())
+    }
+}
+
+
+//图片样式组件，resizable()仅适用于image，不能用来扩展通用视图，所以要单独拿出来
+extension Image {
+    func imageDisplayStyle() -> some View {
+        self
+            .resizable()
+            .scaledToFill()
+            .frame(minHeight: 300)
+            .frame(width: UIScreen.main.bounds.width - 32)  //必须是明确的数值，否则图片可能溢出
+            .clipShape(RoundedRectangle(cornerRadius: 10))
     }
 }

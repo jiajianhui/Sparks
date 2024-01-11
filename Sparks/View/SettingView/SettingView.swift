@@ -42,7 +42,6 @@ struct SettingView: View {
                     }
                     .sheet(isPresented: $showAboutMeSheet) {
                         SettingSheetView(content: vm.aboutMeSheetContent)
-                            .presentationDragIndicator(.visible)
                     }
                 } header: {
                     Text("关于")

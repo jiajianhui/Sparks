@@ -28,6 +28,7 @@ struct ListRowView: View {
                     let uiImage = UIImage(data: spark.image!)
                     Image(uiImage: uiImage!)
                         .resizable()
+                        .scaledToFill()
                         .frame(width: 60, height: 60)
                         .cornerRadius(6)
                 }

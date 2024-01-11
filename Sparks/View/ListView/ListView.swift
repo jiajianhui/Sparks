@@ -70,6 +70,7 @@ struct ListView: View {
             }
             
             .searchable(text: $searchConfig.query, prompt: Text("搜索"))
+            
             .navigationTitle("灵感")
             .toolbar {
                 ToolbarItem {
