@@ -49,27 +49,13 @@ struct SettingView: View {
                 }
                 
                 Section {
-                    HStack {
-                        Toggle(isOn: $isToggle) {
-                            HStack {
-                                Image(systemName: "key.fill")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 18, height: 18)
-                                    .opacity(0.3)
-                                Text("开启面容ID验证")
-                                    .fontWeight(.medium)
-                            }
-                        }
-                        .tint(.blue)
-                        .padding(.vertical, 8)
-                    }
+                    faceidToggle
                 } footer: {
                     Text("开启后，打开App时会进行验证")
                 }
                 
                 Section {
-                    ShareLink(item: URL(string: "https://www.apple.com")!) {
+                    ShareLink(item: URL(string: "https://apps.apple.com/app/id6475958954")!) {
                         SettingRowView(imageString: "square.and.arrow.up.fill", linkTitle: "分享产品")
                     }
 
@@ -141,4 +127,25 @@ extension SettingView {
                         SKStoreReviewController.requestReview(in: scene)
                     }
     }
+    
+    
+    //验证开关
+    var faceidToggle: some View {
+        HStack {
+            Toggle(isOn: $isToggle) {
+                HStack {
+                    Image(systemName: "key.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 18, height: 18)
+                        .opacity(0.3)
+                    Text("开启面容ID验证")
+                        .fontWeight(.medium)
+                }
+            }
+            .tint(.blue)
+            .padding(.vertical, 4)
+        }
+    }
+    
 }
