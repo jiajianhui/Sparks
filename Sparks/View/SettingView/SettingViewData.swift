@@ -37,6 +37,6 @@ class SettingViewData: ObservableObject {
         title: "隐私政策",
         symbol: "🙅",
         content1: "隐私大于一切！！！",
-        content2: "我们非常在意您的隐私，绝对不会上传您的任何数据，所有数据均在设备端离线运行。"
+        content2: "我非常在意您的隐私，绝对不会上传您的任何数据，所有数据均在设备端离线运行。"
     )
 }

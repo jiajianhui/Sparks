@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct SettingView: View {
     
@@ -88,14 +89,18 @@ struct SettingView: View {
                     }
 
                     Button {
-                        
+                        star()
                     } label: {
-                        SettingRowView(imageString: "star.fill", linkTitle: "去评分")
+                        SettingRowView(imageString: "hand.thumbsup.fill", linkTitle: "去评分")
                     }
                     
                 } header: {
-                    Text("其它")
+                    Text("产品")
                 }
+                footer: {
+                    Text("当前版本 1.0")
+                }
+
             }
             .navigationTitle("设置")
         }
@@ -128,5 +133,12 @@ extension SettingView {
                 UIApplication.shared.open(emailURL)
             }
         }
+    }
+    
+    //评分函数
+    private func star() {
+        if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                        SKStoreReviewController.requestReview(in: scene)
+                    }
     }
 }
