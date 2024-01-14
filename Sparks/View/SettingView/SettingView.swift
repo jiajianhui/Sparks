@@ -21,10 +21,12 @@ struct SettingView: View {
     //与父级的isToggle相绑定
     @Binding var isToggle: Bool
     
-    
+    //分享链接
+    private let url = URL(string: "https://apps.apple.com/app/id6475958954")!
     
     var body: some View {
         NavigationStack {
+            
             List {
                 Section {
                     Button {
@@ -55,7 +57,7 @@ struct SettingView: View {
                 }
                 
                 Section {
-                    ShareLink(item: URL(string: "https://apps.apple.com/app/id6475958954")!) {
+                    ShareLink(item:url) {
                         SettingRowView(imageString: "square.and.arrow.up.fill", linkTitle: "分享产品")
                     }
 
@@ -89,7 +91,6 @@ struct SettingView: View {
 
             }
             .navigationTitle("设置")
-//            .navisty
         }
     }
     
