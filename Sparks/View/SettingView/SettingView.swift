@@ -24,7 +24,7 @@ struct SettingView: View {
     
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 Section {
                     Button {
@@ -89,6 +89,7 @@ struct SettingView: View {
 
             }
             .navigationTitle("设置")
+//            .navisty
         }
     }
     
