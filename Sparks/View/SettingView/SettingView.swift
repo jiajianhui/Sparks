@@ -24,6 +24,9 @@ struct SettingView: View {
     //分享链接
     private let url = URL(string: "https://apps.apple.com/app/id6475958954")!
     
+    //好评
+    @Environment(\.requestReview) var requestReview
+    
     var body: some View {
         NavigationStack {
             
@@ -77,7 +80,7 @@ struct SettingView: View {
                     }
 
                     Button {
-                        star()
+                        requestReview()
                     } label: {
                         SettingRowView(imageString: "hand.thumbsup.fill", linkTitle: "去评分")
                     }
@@ -123,15 +126,8 @@ extension SettingView {
         }
     }
     
-    //评分函数
-    private func star() {
-        if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
-                        SKStoreReviewController.requestReview(in: scene)
-                    }
-    }
     
-    
-    //验证开关
+    //验证开关视图
     var faceidToggle: some View {
         HStack {
             Toggle(isOn: $isToggle) {
