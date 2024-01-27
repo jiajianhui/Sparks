@@ -80,7 +80,8 @@ struct SettingView: View {
                     }
 
                     Button {
-                        requestReview()
+//                        requestReview()
+                        star()
                     } label: {
                         SettingRowView(imageString: "hand.thumbsup.fill", linkTitle: "去评分")
                     }
@@ -123,6 +124,13 @@ extension SettingView {
             if let emailURL = URL(string: email) {
                 UIApplication.shared.open(emailURL)
             }
+        }
+    }
+    
+    //评分函数
+    private func star() {
+        if let url = URL(string: "https://itunes.apple.com/app/id6475958954?action=write-review") {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     
