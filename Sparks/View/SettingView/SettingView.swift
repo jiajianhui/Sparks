@@ -90,7 +90,7 @@ struct SettingView: View {
                     Text("产品")
                 }
                 footer: {
-                    Text("当前版本 1.0")
+                    Text("当前版本 1.5")
                 }
 
             }
