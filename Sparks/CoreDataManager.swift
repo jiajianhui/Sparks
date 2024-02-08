@@ -16,7 +16,7 @@ class CoreDataManager {
     static let shared = CoreDataManager()
     
     //创建容器，支持本地和网络存储
-    private let container: NSPersistentContainer
+    private let container: NSPersistentCloudKitContainer
     
     //创建上下文
     var viewContext: NSManagedObjectContext {
@@ -31,7 +31,12 @@ class CoreDataManager {
     
     //启动方法
     init() {
-        container = NSPersistentContainer(name: "SparksDataModel") //创建容器，名称必须与模型名称一致
+        container = NSPersistentCloudKitContainer(name: "SparksDataModel") //创建容器，名称必须与模型名称一致
+        guard let description = container.persistentStoreDescriptions.first else {
+            fatalError("...")
+        }
+        description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)  //启用历史记录跟踪。这是为了支持 Core Data 的历史记录追踪功能。
+        container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy  //设置合并策略
         container.viewContext.automaticallyMergesChangesFromParent = true //viewContext变化时，自动保存
         container.loadPersistentStores { _, error in //加载CoreData数据
             if let error {
